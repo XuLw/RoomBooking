@@ -1,0 +1,5 @@
+/**app.wxss**/
+text{
+  color: #666;
+  font-family: serif,sans-serif;
+}

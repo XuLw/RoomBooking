@@ -1,0 +1,12 @@
+<view class='container'>
+  <view class='image_container'>
+    <image style='height: 280rpx; width: 100%; background-color:#eee' src='../../images/NEU.png' mode='scaleToFill'>
+    </image>
+  </view>
+
+  <view>
+    <text>选择日期</text>
+    <picker mode="date"></picker>
+  </view>
+
+</view>
