@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/main/main",
+    "pages/reserved/rederved",
     "pages/index/index",
-    "pages/reserved/rederved"
+    "pages/main/chooseroom/chooseroom",
+    "pages/reserved/order/order"
   ],
   "tabBar": {
     "color": "#8a8a8a",

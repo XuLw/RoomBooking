@@ -1,12 +1,73 @@
-<view class='container'>
-  <view class='image_container'>
-    <image style='height: 280rpx; width: 100%; background-color:#eee' src='../../images/NEU.png' mode='scaleToFill'>
-    </image>
+<scroll-view class="base-container" enable-back-to-top='true' scroll-y style='width:100%;height:100%;' scroll-into-view="{{toView}}">
+  <view class='pick-container'>
+    <view class='image_container' catchtap='onHeadImageTap'>
+      <image style='height: 280rpx; width: 100%; background-color:#eee' src='../../images/NEU.png' mode='scaleToFill'>
+      </image>
+    </view>
+
+    <view class='{{showNotification ? "notification" : "notification-hide"}}'>
+      <text style='font-size:32rpx; color:red;'>通知 : 只能预定15天内的会议室！</text>
+      <image src='../../images/cancel.png' catchtap='onCancelTap' style='height:34rpx;width:34rpx;margin-right:20rpx;'></image>
+    </view>
+
+
+    <view class='block-line'></view>
+
+    <view style='margin-top:50rpx;'>
+      <view class="date-picker-container">
+        <picker class="date-piker" style='width:100%;' mode="date" value="{{curDate}}" start="2018-04-14" end="2018-5-15" bindchange='bindDateChange'>
+          <view style='width:100%;'>
+            <text class="" space="ensp">选择日期 :   {{curDate}}     </text>
+          </view>
+        </picker>
+      </view>
+
+      <view class="time-picker-container">
+        <picker class="time-picker" style='width:100%;' mode="time" value="{{startTime}}" start="{{startTime}}" end="23:00" bindchange='bindStartTimeChange'>
+          <view style='width:100%;'>
+            <text class="" space="ensp">开始时间 :   {{startTime}}</text>
+          </view>
+        </picker>
+        <picker class="time-picker" style='width:100%;' mode="time" value="{{startTime}}" start="{{startTime}}" end="23:00" bindchange='bindEndTimeChange'>
+          <view style='width:100%;'>
+            <text class="" space="ensp">结束时间 :   {{endTime}}</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+
+    <button class='button-search' catchtap='catchSearchTap'>查询</button>
+
   </view>
 
-  <view>
-    <text>选择日期</text>
-    <picker mode="date"></picker>
+
+  <view class='block-line'></view>
+
+  <view class='room-detail' id='search-result'>
+    <view class='room-select-container'>
+      <picker mode="selector" bindchange='selectBuilding' range='{{buildings}}'>
+        <text style='text-decoration-line: underline;'>{{chooseBuilding}}</text>
+      </picker>
+      <checkbox>多媒体</checkbox>
+      <checkbox>空调</checkbox>
+      <checkbox>黑板</checkbox>
+    </view>
+    <view class='people-select'>
+      <text style='width:20%;'>人数</text>
+      <slider class='slider-people' step='2' max='40' min='4' show-value='true'></slider>
+    </view>
+    <view class='block-line'></view>
+    <scroll-view scroll-y class='rooms'>
+      <view class='room'>
+      </view>
+       <view class='room'>
+      </view> <view class='room'>
+      </view> <view class='room'>
+      </view> <view class='room'>
+      </view>
+    </scroll-view>
+    <button class='order-take'>立即预定</button>
   </view>
 
-</view>
+</scroll-view>

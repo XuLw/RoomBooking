@@ -1,2 +1,26 @@
 <!--pages/reserved/rederved.wxml-->
-<text>pages/reserved/rederved.wxml</text>
+<view class='base-container'>
+  <view class='info-container'>
+    <image style='width:120rpx; height:120rpx;margin:40rpx' src='../../images/headImage.jpg'></image>
+    <text class='user-name'> Xu lw</text>
+  </view>
+  <view class='reserving-container'>
+    <view class='test'>
+      <text>预定ing...</text>
+      <view class='separate-line'></view>
+
+      <view class='ordering-container'  >
+        <scroll-view class='scroll' scroll-x>
+          <view id="green" class="scroll-view-item bc_green">green</view>
+          <view id="red" class="scroll-view-item bc_red">red</view>
+          <view id="yellow" class="scroll-view-item bc_yellow">yellow</view>
+        </scroll-view>
+      </view>
+
+    </view>
+  </view>
+  <view class='reserved-container' catchtap='topOnReserved'>
+    <text style='font-size:28rpx;'>已经完成的预定</text>
+    <image style='width:40rpx;height:40rpx;margin-right:40rpx;' src='../../images/more.png'></image>
+  </view>
+</view>

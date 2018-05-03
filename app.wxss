@@ -1,5 +1,7 @@
 /**app.wxss**/
 text{
+  padding: 15rpx;
   color: #666;
   font-family: serif,sans-serif;
+  font-size: 40rpx;
 }

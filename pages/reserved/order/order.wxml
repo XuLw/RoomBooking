@@ -1,0 +1,6 @@
+<!--pages/order/order.wxml-->
+<view>
+  <text>
+    显示已经完成的订单
+  </text>
+</view>

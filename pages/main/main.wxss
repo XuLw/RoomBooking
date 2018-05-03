@@ -4,8 +4,14 @@ page {
   height: 100%;
 }
 
-.container{
-  outline: 1rpx solid red;
+
+::-webkit-scrollbar{
+  width:0;
+  height: 0;
+  display: flex;
+}
+
+.pick-container{
   height: 100%;
   width: 100%;
 }
@@ -14,4 +20,87 @@ page {
 .image_container{
   height: 280rpx;
   width: 100%;
+}
+
+.date-picker-container{
+  display: flex;
+  margin: 20rpx;
+  flex-direction: row;
+}
+
+ .time-picker-container{
+  display: flex;
+  margin: 20rpx;
+  flex-direction: column;
+}
+
+.block-line{
+  height: 1px;
+  background:#d9d9d9;
+  margin: 5rpx;
+}
+
+.button-search{
+  margin: 20rpx;
+  margin-top: 100rpx;
+}
+
+.time-picker{
+  margin-top: 20rpx;
+}
+
+
+.notification{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.notification-hide{
+  display: none;
+}
+
+.room-detail{
+  height: 100%;
+  width: 100%; 
+}
+
+.room-select-container{
+  height: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right:10rpx;  
+  padding: 0 18rpx;
+  margin-left: 0; 
+}
+
+.people-select{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0 10rpx;
+}
+
+.slider-people{
+  display: inline-block;
+  width: 60%;
+}
+
+.rooms{
+  height: 70%;
+  width: 100%;
+}
+.order-take{
+  height: 10%;
+  width: 80%;
+}
+
+.room{
+  outline: 1rpx dashed red;
+  height: 180rpx;
+  width: 100%;
+  background-color: #f5f5f5;
 }

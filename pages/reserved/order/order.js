@@ -1,4 +1,4 @@
-// pages/reserved/rederved.js
+// pages/order/order.js
 Page({
 
   /**
@@ -62,11 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-
-  topOnReserved:function (){
-    wx.navigateTo({
-      url: 'order/order'
-    })
   }
 })
