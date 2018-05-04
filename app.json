@@ -3,8 +3,8 @@
     "pages/main/main",
     "pages/reserved/rederved",
     "pages/index/index",
-    "pages/main/chooseroom/chooseroom",
-    "pages/reserved/order/order"
+    "pages/reserved/order/order",
+    "pages/order/order"
   ],
   "tabBar": {
     "color": "#8a8a8a",

@@ -23,7 +23,7 @@
       </view>
 
       <view class="time-picker-container">
-        <picker class="time-picker" style='width:100%;' mode="time" value="{{startTime}}" start="{{startTime}}" end="23:00" bindchange='bindStartTimeChange'>
+        <picker class="time-picker" style='width:100%;' mode="time" value="{{curTime}}" start="{{curTime}}" end="23:00" bindchange='bindStartTimeChange'>
           <view style='width:100%;'>
             <text class="" space="ensp">开始时间 :   {{startTime}}</text>
           </view>
@@ -46,28 +46,33 @@
 
   <view class='room-detail' id='search-result'>
     <view class='room-select-container'>
-      <picker mode="selector" bindchange='selectBuilding' range='{{buildings}}'>
+      <picker class='building-picker-container' mode="selector" bindchange='selectBuilding' range='{{buildings}}'>
         <text style='text-decoration-line: underline;'>{{chooseBuilding}}</text>
       </picker>
-      <checkbox>多媒体</checkbox>
-      <checkbox>空调</checkbox>
-      <checkbox>黑板</checkbox>
+      <checkbox-group class="checkbox-container" bindchange='selectStatus'>
+       <checkbox value='multimedia' >多媒体</checkbox>
+       <checkbox value='aircondition'>空调</checkbox>
+       <checkbox value='blackboard'>黑板</checkbox>
+      </checkbox-group>
+     
     </view>
     <view class='people-select'>
       <text style='width:20%;'>人数</text>
-      <slider class='slider-people' step='2' max='40' min='4' show-value='true'></slider>
+      <slider bindchange="selectPeople" class='slider-people' step='2' max='40' min='4' show-value='true'></slider>
     </view>
     <view class='block-line'></view>
     <scroll-view scroll-y class='rooms'>
-      <view class='room'>
-      </view>
-       <view class='room'>
-      </view> <view class='room'>
-      </view> <view class='room'>
-      </view> <view class='room'>
-      </view>
+      <block wx:for="{{selectRooms}}" wx:for-item="room">
+        <navigator url='../order/order'>
+          <view class='room'>
+            <image style='height:100%;width:30%;' src='../../images/room.jpg'></image>
+            <text class='info-building'>{{room.building}}</text>
+            <text class='info-number'>{{room.roomNum}}</text>
+            <text style='width:2em;' class='info-people'>{{room.people}}</text>
+          </view>
+        </navigator>
+      </block>
     </scroll-view>
-    <button class='order-take'>立即预定</button>
   </view>
 
 </scroll-view>

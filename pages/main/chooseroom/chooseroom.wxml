@@ -1,4 +1,0 @@
-<!--pages/main/chooseroom/chooseroom.wxml-->
-<view wx:for="{{rooms}}">
-  
-</view>
