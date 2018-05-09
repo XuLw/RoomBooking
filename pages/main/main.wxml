@@ -42,9 +42,10 @@
   </view>
 
 
-  <view class='block-line'></view>
+  <view class='{{isSearch ? "room-detail" : "room-detail-hide"}}' id='search-result'>
+  
 
-  <view class='room-detail' id='search-result'>
+  <view class='block-line'></view>
     <view class='room-select-container'>
       <picker class='building-picker-container' mode="selector" bindchange='selectBuilding' range='{{buildings}}'>
         <text style='text-decoration-line: underline;'>{{chooseBuilding}}</text>
@@ -62,15 +63,13 @@
     </view>
     <view class='block-line'></view>
     <scroll-view scroll-y class='rooms'>
-      <block wx:for="{{selectRooms}}" wx:for-item="room">
-        <navigator url='../order/order'>
-          <view class='room'>
+      <block wx:for="{{selectRooms}}" wx:for-item="room" wx:for-index="id">
+          <view class='room' id='{{id}}' bindtap='roomBooking'>
             <image style='height:100%;width:30%;' src='../../images/room.jpg'></image>
             <text class='info-building'>{{room.building}}</text>
             <text class='info-number'>{{room.roomNum}}</text>
             <text style='width:2em;' class='info-people'>{{room.people}}</text>
           </view>
-        </navigator>
       </block>
     </scroll-view>
   </view>

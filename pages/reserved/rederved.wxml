@@ -5,18 +5,40 @@
     <text class='user-name'> Xu lw</text>
   </view>
   <view class='reserving-container'>
-    <view class='test'>
-      <text>预定ing...</text>
-      <view class='separate-line'></view>
-
-      <view class='ordering-container'  >
-        <scroll-view class='scroll' scroll-x>
-          <view id="green" class="scroll-view-item bc_green">green</view>
-          <view id="red" class="scroll-view-item bc_red">red</view>
-          <view id="yellow" class="scroll-view-item bc_yellow">yellow</view>
-        </scroll-view>
+    <text>预定ing...</text>
+    <view class='separate-line'></view>
+    <view class='ordering-container'>
+      <swiper wx:if="{{bookedRooms.length > 0}}" class='swiper-container' indicator-dots='true'>
+        <block wx:for="{{bookedRooms}}" wx:for-item="room">
+          <swiper-item>
+            <view class='room-container'>
+              <view class='container room-info'>
+                <text>{{room.building}} - {{room.roomNum}}</text>
+              </view>
+              <view class='container state'>
+                <text>{{room.hasMultimedia ? '带多媒体' : ""}}</text>
+                <text>{{room.airConditioin ? '带空调' : ""}}</text>
+                <text>{{room.blackBoard ? '带黑板' : ""}}</text>
+              </view>
+              <view class='container date'>
+                <text>{{room.date}}</text>
+              </view>
+              <view class='container-time'>
+                <text>{{room.stime}}</text>
+                <text> -- </text>
+                <text>{{room.etime}}</text>
+              </view>
+              <view class='button-container'>
+                <button size='mini' type='primary' catchtap='cancelOrder' id='{{index}}'>删除预定</button>
+                <button size='mini' type='primary' style='delayOrder'>延迟预定</button>
+              </view>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view wx:if="{{bookedRooms.length === 0}}" class='no-book'>
+        <text>暂无预定！</text>
       </view>
-
     </view>
   </view>
   <view class='reserved-container' catchtap='topOnReserved'>

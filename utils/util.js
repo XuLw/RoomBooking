@@ -72,6 +72,14 @@ var localData = {
       people: 12,
       isBooked: false
     }
+  ],
+  bookRecord:[
+    {
+      bookDate:"",
+      bookTime:"",
+      bookBuilding:"",
+      bookRoomNum:""
+    }
   ]
 }
 

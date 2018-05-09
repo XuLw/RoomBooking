@@ -15,15 +15,17 @@ Page({
     showNotification: true,
     isSearch: false,
     toView: '',
+    isSearchTap: false,
     buildings: ['全部', '信息楼', '文馆楼', '建筑楼', '一号馆', '生科楼'],
     chooseBuilding: '全部',
     selectRooms: [],
+
     status: {
       hasMultimedia: false,
       hasAircondition: false,
       hasBlackboard: false
     },
-    people:4
+    people: 4
   },
 
   /**
@@ -110,9 +112,13 @@ Page({
 
   catchSearchTap: function (e) {
     this.setData({
-      isSearch: true,
+      isSearch: true
+    });
+    this.setData({
       toView: 'search-result'
     });
+
+   
 
   },
 
@@ -138,9 +144,9 @@ Page({
   selectStatus: function (e) {
 
     var checkItems = ["multimedia", "aircondition", "blackboard"];
-    var sta = [false,false,false];
-    for(var i = 0; i < checkItems.length; i++){
-      if(e.detail.value.indexOf(checkItems[i]) != -1){
+    var sta = [false, false, false];
+    for (var i = 0; i < checkItems.length; i++) {
+      if (e.detail.value.indexOf(checkItems[i]) != -1) {
         sta[i] = true;
       }
     }
@@ -154,9 +160,9 @@ Page({
 
     this.getRooms();
   },
-  selectPeople:function(e){
+  selectPeople: function (e) {
     this.setData({
-        people:e.detail.value
+      people: e.detail.value
     });
     this.getRooms();
   },
@@ -179,5 +185,27 @@ Page({
     this.setData({
       selectRooms: sRooms
     });
+  },
+  roomBooking: function (e) {
+    //预定了房间，将
+    var room = this.data.selectRooms[e.currentTarget.id];
+
+    room.date = this.data.curDate;
+    room.stime = this.data.startTime;
+    room.etime = this.data.endTime;
+
+    getApp().globalData.bookedRooms.push(room);
+
+    for (var i = 0; i < rooms.length; i++){
+      if (rooms[i].building === room.building && rooms[i].roomNum === room.roomNum){
+        rooms[i].isBooked = true;
+      }
+    }
+
+    wx.showToast({
+      title: '预定成功！',
+    });
+
+    this.getRooms();
   }
 })

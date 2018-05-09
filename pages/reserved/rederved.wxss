@@ -23,9 +23,32 @@ page{
   padding: 30rpx 10rpx;
 }
 
-.test{
+.swiper-container{
   height: 100%;
   width: 100%;
+  box-shadow: 2rpx 4rpx 2rpx 4rpx gainsboro;
+  border-radius: 20rpx;
+}
+
+.no-book{
+  height: 100%;
+  width: 100%;
+  box-shadow: 2rpx 4rpx 2rpx 4rpx gainsboro;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-container{
+  height: 100%;
+  width: 100%;
+  display: flex; 
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 2rpx 4rpx 2rpx 4rpx gainsboro;
+  align-items: center; 
 }
 
 
@@ -41,7 +64,23 @@ page{
 .ordering-container{
   margin: 20rpx;
   height: 90%;
-  outline: 1rpx dashed #388c14;
+}
+
+
+
+.container{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  margin: 5rpx;
+}
+
+.button-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  margin-bottom: 30rpx;
 }
 
 
@@ -57,27 +96,3 @@ page{
   background-color: #f5f5f5;
 }
 
-.scroll{
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-   white-space: nowrap;
-}
-
-#green{
-  background-color: green;
-}
-
-#red{
-  background-color: red;
-}
-
-#yellow{
-  background-color: yellow;
-}
-
-.scroll-view-item {
-  width: 100%;
-  height: 100%;
-  display: inline-block;
-}

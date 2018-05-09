@@ -66,6 +66,10 @@ page {
   width: 100%; 
 }
 
+.room-detail-hide{
+  display: none;
+}
+
 .room-select-container{
   height: 10%;
   display: flex;
