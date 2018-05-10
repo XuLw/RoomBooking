@@ -1,6 +1,15 @@
 <!--pages/order/order.wxml-->
-<view>
-  <text>
-    显示已经完成的订单
-  </text>
+<view class='container'>
+  <view class='record'>
+    <text>记录 一</text>
+  </view>
+
+  <view class='record'>
+    <text>记录 二</text>
+  </view>
+
+  <view class='record'>
+    <text>记录 三</text>
+  </view>
+
 </view>

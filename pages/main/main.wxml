@@ -59,7 +59,7 @@
     </view>
     <view class='people-select'>
       <text style='width:20%;'>人数</text>
-      <slider bindchange="selectPeople" class='slider-people' step='2' max='40' min='4' show-value='true'></slider>
+      <slider bindchange="selectPeople" class='slider-people' step='5' max='40' min='4' show-value='true'></slider>
     </view>
     <view class='block-line'></view>
     <scroll-view scroll-y class='rooms'>

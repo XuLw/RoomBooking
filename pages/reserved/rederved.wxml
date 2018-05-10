@@ -8,7 +8,7 @@
     <text>预定ing...</text>
     <view class='separate-line'></view>
     <view class='ordering-container'>
-      <swiper wx:if="{{bookedRooms.length > 0}}" class='swiper-container' indicator-dots='true'>
+      <swiper current='{{curItem}}' wx:if="{{bookedRooms.length > 0}}" class='swiper-container' indicator-dots='true'>
         <block wx:for="{{bookedRooms}}" wx:for-item="room">
           <swiper-item>
             <view class='room-container'>

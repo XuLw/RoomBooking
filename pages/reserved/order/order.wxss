@@ -1,1 +1,23 @@
 /* pages/order/order.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.record {
+  margin-left:30rpx; 
+  margin-top:10rpx; 
+  box-shadow: 2rpx 2rpx 2rpx 2rpx gainsboro;
+  border-radius: 20rpx;
+  height: 250rpx;
+  width: 100%;
+  text-align: center;
+}

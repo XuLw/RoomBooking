@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    bookedRooms: []
+    bookedRooms: [],
+    curItem : 0
   },
 
   /**
@@ -74,15 +75,18 @@ Page({
     })
   },
   cancelOrder: function (e) {
+
     this.data.bookedRooms.splice(e.currentTarget.id, 1);
     bookedRooms: getApp().globalData.bookedRooms.splice(e.currentTarget.id,1);
+    
     this.setData({
-      bookedRooms: this.data.bookedRooms
+      bookedRooms: this.data.bookedRooms,
+      curItem : e.currentTarget.id > 0 ? e.currentTarget - 1 : 0
     });
 
     wx.showToast({
       title: '取消成功！',
     });
-
+    console.log(this.data.bookedRooms)
   }
 })
