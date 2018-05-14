@@ -1,0 +1,6 @@
+<!--pages/institude/institude.wxml-->
+<view class="item">
+    <view class="name">设置学院：</view>
+    <view class="val"><input name="institude" type="text"  bindinput="bindInstitudeInput" placeholder="请输入您所在的学院" placeholder-class="holder"/></view>
+</view>
+<button type='primary' class="back" bindtap="backMycenter">完成</button>

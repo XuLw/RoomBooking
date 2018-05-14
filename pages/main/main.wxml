@@ -1,4 +1,6 @@
 <scroll-view class="base-container" enable-back-to-top='true' scroll-y style='width:100%;height:100%;' scroll-into-view="{{toView}}">
+
+
   <view class='pick-container'>
     <view class='image_container' catchtap='onHeadImageTap'>
       <image style='height: 280rpx; width: 100%; background-color:#eee' src='../../images/NEU.png' mode='scaleToFill'>
@@ -10,52 +12,64 @@
       <image src='../../images/cancel.png' catchtap='onCancelTap' style='height:34rpx;width:34rpx;margin-right:20rpx;'></image>
     </view>
 
+    <!-- <view class='block-line'></view> -->
 
-    <view class='block-line'></view>
 
-    <view style='margin-top:50rpx;'>
-      <view class="date-picker-container">
-        <picker class="date-piker" style='width:100%;' mode="date" value="{{curDate}}" start="2018-04-14" end="2018-5-15" bindchange='bindDateChange'>
-          <view style='width:100%;'>
-            <text class="" space="ensp">选择日期 :   {{curDate}}     </text>
+    <view class='picker-container'>
+      <view class='date-picker-container'>
+        <picker class="date-picker" style='width:100%;' mode="date" value="{{curDate}}" start="2018-04-14" end="2018-5-15" bindchange='bindDateChange'>
+          <view class="date-text-container">
+            <text class='label-text'>日  期:</text>
+            <text class='choose-text'>{{curDate}}</text>
           </view>
         </picker>
       </view>
 
+      <view style='height:1rpx;width:100%;background-color:#41aa45;'></view>
+
       <view class="time-picker-container">
-        <picker class="time-picker" style='width:100%;' mode="time" value="{{curTime}}" start="{{curTime}}" end="23:00" bindchange='bindStartTimeChange'>
-          <view style='width:100%;'>
-            <text class="" space="ensp">开始时间 :   {{startTime}}</text>
-          </view>
-        </picker>
-        <picker class="time-picker" style='width:100%;' mode="time" value="{{startTime}}" start="{{startTime}}" end="23:00" bindchange='bindEndTimeChange'>
-          <view style='width:100%;'>
-            <text class="" space="ensp">结束时间 :   {{endTime}}</text>
-          </view>
-        </picker>
+
+        <text class='label-text'>时  间:</text>
+
+        <view class="time-pickers-container">
+
+          <picker class="time-picker" mode="time" value="{{curTime}}" start="{{curTime}}" end="23:00" bindchange='bindStartTimeChange'>
+            <view style='width:100%;'>
+              <text class='choose-text'>{{startTime}}</text>
+            </view>
+          </picker>
+
+          <text>——</text>
+
+          <picker class="time-picker" mode="time" value="{{startTime}}" start="{{startTime}}" end="23:00" bindchange='bindEndTimeChange'>
+            <text class='choose-text'>{{endTime}}</text>
+          </picker>
+
+        </view>
+
       </view>
     </view>
 
-
-    <button class='button-search' catchtap='catchSearchTap'>查询</button>
+    <button class='button-search' type='primary' catchtap='catchSearchTap'>查询</button>
 
   </view>
 
 
-  <view class='{{isSearch ? "room-detail" : "room-detail-hide"}}' id='search-result'>
-  
 
-  <view class='block-line'></view>
+  <view class='{{isSearch ? "room-detail" : "room-detail-hide"}}' id='search-result'>
+
+
+    <view class='block-line'></view>
     <view class='room-select-container'>
       <picker class='building-picker-container' mode="selector" bindchange='selectBuilding' range='{{buildings}}'>
         <text style='text-decoration-line: underline;'>{{chooseBuilding}}</text>
       </picker>
       <checkbox-group class="checkbox-container" bindchange='selectStatus'>
-       <checkbox value='multimedia' >多媒体</checkbox>
-       <checkbox value='aircondition'>空调</checkbox>
-       <checkbox value='blackboard'>黑板</checkbox>
+        <checkbox value='multimedia'>多媒体</checkbox>
+        <checkbox value='aircondition'>空调</checkbox>
+        <checkbox value='blackboard'>黑板</checkbox>
       </checkbox-group>
-     
+
     </view>
     <view class='people-select'>
       <text style='width:20%;'>人数</text>
@@ -64,12 +78,12 @@
     <view class='block-line'></view>
     <scroll-view scroll-y class='rooms'>
       <block wx:for="{{selectRooms}}" wx:for-item="room" wx:for-index="id">
-          <view class='room' id='{{id}}' bindtap='roomBooking'>
-            <image style='height:100%;width:30%;' src='../../images/room.jpg'></image>
-            <text class='info-building'>{{room.building}}</text>
-            <text class='info-number'>{{room.roomNum}}</text>
-            <text style='width:2em;' class='info-people'>{{room.people}}</text>
-          </view>
+        <view class='room' id='{{id}}' bindtap='roomBooking'>
+          <image style='height:100%;width:30%;' src='../../images/room.jpg'></image>
+          <text class='info-building'>{{room.building}}</text>
+          <text class='info-number'>{{room.roomNum}}</text>
+          <text style='width:2em;' class='info-people'>{{room.people}}</text>
+        </view>
       </block>
     </scroll-view>
   </view>

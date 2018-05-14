@@ -3,5 +3,5 @@ text{
   padding: 15rpx;
   color: #666;
   font-family: serif,sans-serif;
-  font-size: 40rpx;
+  font-size: 34rpx;
 }

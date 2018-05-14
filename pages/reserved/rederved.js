@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userName:"",
+    userRoom:"文馆楼",
     bookedRooms: [],
     curItem : 0
   },
@@ -31,6 +33,28 @@ Page({
     this.setData({
       bookedRooms: getApp().globalData.bookedRooms
     });
+
+    var that = this;
+    wx.getStorage({
+      key: 'name',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          userName: res.data
+        })
+      }
+    })
+
+    var that = this;
+    wx.getStorage({
+      key: 'office',
+      success: function (res) {
+        console.log(res.data)
+        that.setData({
+          userRoom: res.data
+        })
+      }
+    })
 
   },
 
@@ -81,12 +105,17 @@ Page({
     
     this.setData({
       bookedRooms: this.data.bookedRooms,
-      curItem : e.currentTarget.id > 0 ? e.currentTarget - 1 : 0
+      curItem : e.currentTarget.id > 0 ? e.currentTarget.id - 1 : 0
     });
 
     wx.showToast({
       title: '取消成功！',
     });
     console.log(this.data.bookedRooms)
+  },
+  tapOnInfo:function(e){
+    wx.navigateTo({
+      url: '../info/mycenter/mycenter',
+    })
   }
 })

@@ -1,0 +1,6 @@
+<!--pages/cellnumber/cellnumber.wxml-->
+<view class="item">
+    <view class="name">手机号码：</view>
+    <view class="val"><input name="cell" type="text"  bindinput="bindCellInput" placeholder="请输入您的手机号码" placeholder-class="holder"/></view>
+</view>
+<button type='primary' class="back" bindtap="backMycenter">完成</button>

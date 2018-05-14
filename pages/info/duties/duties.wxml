@@ -1,0 +1,6 @@
+<!--pages/duties/duties.wxml-->
+<view class="item">
+    <view class="name">设置职务：</view>
+    <view class="val"><input name="duties" type="text"  bindinput="bindDutiesInput" placeholder="请输入您的职务" placeholder-class="holder"/></view>
+</view>
+<button type='primary' class="back" bindtap="backMycenter">完成</button>

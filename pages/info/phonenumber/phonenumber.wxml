@@ -1,0 +1,6 @@
+<!--pages/phonenumber/phonenumber.wxml-->
+<view class="item">
+    <view class="name">办公电话：</view>
+    <view class="val"><input name="phone" type="text"  bindinput="bindPhoneInput" placeholder="请输入您的办公电话" placeholder-class="holder"/></view>
+</view>
+<button type='primary' class="back" bindtap="backMycenter">完成</button>

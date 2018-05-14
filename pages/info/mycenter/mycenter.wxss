@@ -1,0 +1,29 @@
+/* pages/mycenter/mycenter.wxss */
+.content{
+  background-color: #F4F4F4;
+  height: 300px;
+}
+.item{
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 50px;
+}
+.itemName{
+  width: 40%;
+  text-indent: 1em;   
+}
+.hr{
+  height: 1px;
+  background-color: #cccccc;
+  opacity: 0.2;
+}
+.right{
+  width: 55%;
+  text-align: right;
+}
+.opr{
+  color: #5495E6;
+  font-size: 17px;
+}

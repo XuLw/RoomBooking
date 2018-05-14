@@ -1,8 +1,9 @@
 <!--pages/reserved/rederved.wxml-->
 <view class='base-container'>
-  <view class='info-container'>
+  <view catchtap='tapOnInfo' class='info-container'>
     <image style='width:120rpx; height:120rpx;margin:40rpx' src='../../images/headImage.jpg'></image>
-    <text class='user-name'> Xu lw</text>
+    <text class='user-name'>{{userName}}</text>
+    <text>{{userRoom}}</text>
   </view>
   <view class='reserving-container'>
     <text>预定ing...</text>

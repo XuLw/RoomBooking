@@ -1,0 +1,51 @@
+<!--pages/mycenter/mycenter.wxml-->
+<view class="content">
+  <view class="item">
+    <view class="itemName">
+      <view>姓名</view>
+    </view>
+    <view class="right" bindtap="tapOnName">
+      <text class="opr">{{name}}</text> ></view>
+  </view>
+  <view class="hr"></view>
+  <view class="item">
+    <view class="itemName">
+      <view>学院</view>
+    </view>
+    <view class="right" bindtap="tapOnInstitude">
+      <text class="opr">{{institude}}</text> ></view>
+  </view>
+  <view class="hr"></view>
+  <view class="item">
+    <view class="itemName">
+      <view>职务</view>
+    </view>
+    <view class="right" bindtap="tapOnDuties">
+      <text class="opr">{{duties}}</text> ></view>
+  </view>
+  <view class="hr"></view>
+  <view class="item">
+    <view class="itemName">
+      <view>办公电话</view>
+    </view>
+    <view class="right" bindtap="tapOnPhone">
+      <text class="opr">{{phone}}</text> ></view>
+  </view>
+  <view class="hr"></view>
+  <view class="item">
+    <view class="itemName">
+      <view>手机号码</view>
+    </view>
+    <view class="right" bindtap="tapOnCell">
+      <text class="opr">{{cell}}</text> ></view>
+  </view>
+  <view class="hr"></view>
+  <view class="item">
+    <view class="itemName">
+      <view>办公地点</view>
+    </view>
+    <view class="right" bindtap="tapOnOffice">
+      <text class="opr">{{office}}</text> ></view>
+  </view>
+  <view class="hr"></view>
+</view>

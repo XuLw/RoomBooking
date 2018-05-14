@@ -32,8 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    rooms = roomData.dataList.rooms;
-    this.getRooms();
+    
   },
 
   /**
@@ -54,6 +53,9 @@ Page({
       endTime: `${("0" + (d.getHours() + 1)).slice(-2)}:${("0" + (d.getMinutes())).slice(-2)}`,
       startTime: `${("0" + (d.getHours())).slice(-2)}:${("0" + (d.getMinutes())).slice(-2)}`
     });
+
+    rooms = roomData.dataList.rooms;
+    this.getRooms();
   },
 
   /**

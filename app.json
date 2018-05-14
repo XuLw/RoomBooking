@@ -4,7 +4,14 @@
     "pages/reserved/rederved",
     "pages/index/index",
     "pages/reserved/order/order",
-    "pages/order/order"
+    "pages/order/order",
+    "pages/info/mycenter/mycenter",
+    "pages/info/office/office",
+    "pages/info/institude/institude",
+    "pages/info/phonenumber/phonenumber",
+    "pages/info/cellnumber/cellnumber",
+    "pages/info/myname/myname",
+    "pages/info/duties/duties"
   ],
   "tabBar": {
     "color": "#8a8a8a",

@@ -1,0 +1,7 @@
+<!--pages/office/office.wxml-->
+<view class="item">
+    <view class="name">办公地点：</view>
+    <view class="val"><input name="office" type="text"  bindinput="bindOfficeInput" placeholder="请输入您的办公地点" placeholder-class="holder"/></view>
+</view>
+
+<button type='primary' class="back" bindtap="backMycenter">完成</button>
