@@ -32,7 +32,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+
   },
 
   /**
@@ -121,7 +121,7 @@ Page({
       toView: 'search-result'
     });
 
-   
+
 
   },
 
@@ -181,6 +181,7 @@ Page({
         && (this.data.status.hasBlackboard === false || this.data.status.hasBlackboard === rooms[i].blackBoard)
         && (this.data.status.hasMultimedia === false || this.data.status.hasMultimedia === rooms[i].hasMultimedia)
         && (this.data.people <= rooms[i].people)
+        && (this.testFunc(rooms[i]))
       ) {
         sRooms.push(rooms[i]);
       }
@@ -189,26 +190,56 @@ Page({
       selectRooms: sRooms
     });
   },
+
   roomBooking: function (e) {
     //预定了房间，将
-    var room = this.data.selectRooms[e.currentTarget.id];
 
-    room.date = this.data.curDate;
-    room.stime = this.data.startTime;
-    room.etime = this.data.endTime;
+    if (getApp().globalData.orderNum > 0) {
+      getApp().globalData.orderNum--;
+      var room = this.data.selectRooms[e.currentTarget.id];
 
-    getApp().globalData.bookedRooms.push(room);
+      room.date = this.data.curDate;
+      room.stime = this.data.startTime;
+      room.etime = this.data.endTime;
 
-    for (var i = 0; i < rooms.length; i++){
-      if (rooms[i].building === room.building && rooms[i].roomNum === room.roomNum){
-        rooms[i].isBooked = true;
+      getApp().globalData.bookedRooms.push(room);
+
+      for (var i = 0; i < rooms.length; i++) {
+        if (rooms[i].building === room.building && rooms[i].roomNum === room.roomNum) {
+          // rooms[i].isBooked = true;
+        }
+      }
+
+      wx.showToast({
+        title: '预定成功！',
+      });
+
+      this.getRooms();
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '每个人最多同时预定3个会议室',
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }
+  },
+
+  testFunc:function(e){
+    var room = getApp().globalData.bookedRooms;
+    for (var i = 0; i < room.length; i++){
+      if (room[i].building === e.building && room[i].roomNum === e.roomNum){
+
+        return false;
       }
     }
-
-    wx.showToast({
-      title: '预定成功！',
-    });
-
-    this.getRooms();
+    return true;
   }
+  
+
 })

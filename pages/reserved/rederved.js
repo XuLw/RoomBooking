@@ -100,6 +100,8 @@ Page({
   },
   cancelOrder: function (e) {
 
+    getApp().globalData.orderNum++;
+    
     this.data.bookedRooms.splice(e.currentTarget.id, 1);
     bookedRooms: getApp().globalData.bookedRooms.splice(e.currentTarget.id,1);
     

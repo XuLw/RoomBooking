@@ -76,11 +76,17 @@ var localData = {
   bookRecord:[
     {
       bookDate:"",
-      bookTime:"",
+      bookStartTime:"",
+      bookEndTime:"",
       bookBuilding:"",
       bookRoomNum:""
     }
-  ]
+  ],
+  // 传入startTime 和 endTime 格式为 00:00 返回startTime > endTime
+  compareTime:function (startTime,endTime){
+
+  },
+  
 }
 
 module.exports = {

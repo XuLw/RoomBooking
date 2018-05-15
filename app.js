@@ -1,6 +1,7 @@
 //app.js
 App({
   globalData:{
-    bookedRooms:[]
+    bookedRooms:[],
+    orderNum:3
   }
 })
