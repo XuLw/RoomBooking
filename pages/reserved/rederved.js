@@ -115,6 +115,16 @@ Page({
     });
     console.log(this.data.bookedRooms)
   },
+  confirmOrder:function(){
+    wx.scanCode({
+      onlyFromCamera:true,
+      success:(res) =>{
+      wx.showToast({
+        title: res.result,
+      })
+      }
+    })
+  },
   tapOnInfo:function(e){
     wx.navigateTo({
       url: '../info/mycenter/mycenter',

@@ -30,8 +30,9 @@
                 <text>{{room.etime}}</text>
               </view>
               <view class='button-container'>
-                <button size='mini' type='primary' catchtap='cancelOrder' id='{{index}}'>删除预定</button>
-                <button size='mini' type='primary' style='delayOrder'>延迟预定</button>
+                <button  style='background-color:orange;width:30%;' type='primary' catchtap='delayOrder'>延  迟</button>
+                <button  style='width:30%;' type='primary' catchtap='confirmOrder'>开  锁</button>
+                <button  style='background-color:red;width:30%;' type='primary' catchtap='cancelOrder' id='{{index}}'>删  除</button>
               </view>
             </view>
           </swiper-item>

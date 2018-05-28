@@ -2,7 +2,6 @@
   "pages": [
     "pages/main/main",
     "pages/reserved/rederved",
-    "pages/index/index",
     "pages/reserved/order/order",
     "pages/order/order",
     "pages/info/mycenter/mycenter",
